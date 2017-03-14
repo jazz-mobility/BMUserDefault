@@ -66,6 +66,14 @@
 /// -setURL:forKey is equivalent to -setObject:forKey: except that the value is archived to an NSData. Use -URLForKey: to retrieve values set this way.
 - (void)setURL:(nullable NSURL *)url forKey:(NSString * _Nonnull)defaultName ;
 
+
+/*!
+ -registerDefaults: adds the registrationDictionary to the last item in every search list. This means that after BMUserDefaults has looked for a value in every other valid location, it will look in registered defaults, making them useful as a "fallback" value. Registered defaults are never stored between runs of an application, and are visible only to the application that registers them.
+ 
+ Default values from Defaults Configuration Files will automatically be registered.
+ */
+- (void)registerDefaults:(NSDictionary<NSString *, id> * _Nonnull)registrationDictionary;
+
 /*!
  -synchronize is deprecated and will be marked with the NS_DEPRECATED macro in a future release.
  
