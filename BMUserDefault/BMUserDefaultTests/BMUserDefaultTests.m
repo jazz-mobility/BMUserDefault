@@ -9,6 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "BMUserDefault.h"
 #import "BMUserDefault+Test.h"
+#import "UserInfoService.h"
+
+
 @interface BMUserDefaultTests : XCTestCase
 
 @end
@@ -24,6 +27,32 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testProperty
+{
+    UserInfoService *service = [[UserInfoService alloc] init];
+    [service setUserId:@"cc"];
+    
+    NSString *name = [[NSUUID UUID] UUIDString];
+    NSArray *array = @[@"a", @"b", @"c"];
+    NSDictionary *dict = @{@"a": @"fdsa", @"b": @"vewf"};
+    service.name = name;
+    service.age = 12;
+    
+    service.array = array;
+    service.dict = dict;
+    
+    XCTAssertEqualObjects(service.name, name, @"set value fail");
+    XCTAssertTrue(service.age == 12, @"set value fail");
+    XCTAssertEqualObjects(service.array, array, @"set value fail");
+    XCTAssertEqualObjects(service.dict, dict, @"set value fail");
+    
+    [service setUserId:@"bb"];
+    XCTAssertNotEqualObjects(service.name, name, @"set value fail");
+    
+    [service setUserId:@"cc"];
+    XCTAssertEqualObjects(service.name, name, @"set value fail");
 }
 
 - (void)testTimes

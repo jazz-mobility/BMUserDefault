@@ -67,6 +67,7 @@ const NSTimeInterval kStoreInterval = 30;
 - (void)dealloc
 {
     [self.timer invalidate];
+    [self synchronize];
     [[self.class cacheUserDefaults] removeObjectForKey:self.storePath];
 }
 

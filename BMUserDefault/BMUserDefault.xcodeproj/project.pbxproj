@@ -21,6 +21,7 @@
 		F7B0CDDC1E76D868000D4191 /* BMUserDefault.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F7B0CDDB1E76D868000D4191 /* BMUserDefault.podspec */; };
 		F7DDEE511E77CCF200DFCFBB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE501E77CCF200DFCFBB /* README.md */; };
 		F7DDEE541E77CD4100DFCFBB /* BMPropertyUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */; };
+		F7DDEE571E77CFE400DFCFBB /* UserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE561E77CFE400DFCFBB /* UserInfoService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		F7DDEE501E77CCF200DFCFBB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F7DDEE521E77CD4100DFCFBB /* BMPropertyUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPropertyUserDefault.h; sourceTree = "<group>"; };
 		F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPropertyUserDefault.m; sourceTree = "<group>"; };
+		F7DDEE551E77CFE400DFCFBB /* UserInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoService.h; sourceTree = "<group>"; };
+		F7DDEE561E77CFE400DFCFBB /* UserInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				F70FA0F51E767BB200599EB5 /* Info.plist */,
 				F7B0CDD51E769F5A000D4191 /* BMUserDefault+Test.h */,
 				F7B0CDD61E769F5A000D4191 /* BMUserDefault+Test.m */,
+				F7DDEE551E77CFE400DFCFBB /* UserInfoService.h */,
+				F7DDEE561E77CFE400DFCFBB /* UserInfoService.m */,
 			);
 			path = BMUserDefaultTests;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70FA0F41E767BB200599EB5 /* BMUserDefaultTests.m in Sources */,
+				F7DDEE571E77CFE400DFCFBB /* UserInfoService.m in Sources */,
 				F7B0CDD71E769F5A000D4191 /* BMUserDefault+Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
