@@ -83,7 +83,10 @@ const NSTimeInterval kStoreInterval = 30;
 
 - (void)removeObjectForKey:(NSString * _Nonnull)defaultName
 {
-    [self.userDefault removeObjectForKey:defaultName];
+    dispatch_sync(_queue, ^{
+        self.isChanged = YES;
+        [self.userDefault removeObjectForKey:defaultName];
+    });
 }
 
 - (nullable NSString *)stringForKey:(NSString * _Nonnull)defaultName
@@ -170,6 +173,14 @@ const NSTimeInterval kStoreInterval = 30;
             self.userDefault[key] = obj;
         }
     }];
+}
+
+- (void)clear
+{
+    dispatch_sync(_queue, ^{
+        self.isChanged = YES;
+        [self.userDefault removeAllObjects];
+    });
 }
 
 - (BOOL)synchronize

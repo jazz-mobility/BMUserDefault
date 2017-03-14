@@ -83,6 +83,10 @@
  - ...before exiting in a non-app (command line tool, agent, or daemon) process: call CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication)
  - ...for any other reason: remove the synchronize call
  */
+
+/** remove all value */
+- (void)clear;
+
 - (BOOL)synchronize;
 
 @end
