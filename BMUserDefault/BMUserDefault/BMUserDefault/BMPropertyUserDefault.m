@@ -111,7 +111,7 @@ static void objectSetter(BMPropertyUserDefault *self, SEL _cmd, id object) {
 }
 
 #pragma mark - Begin
-+ (instancetype)standardUserDefaults {
++ (instancetype)standardUserDefault {
     static dispatch_once_t pred;
     static BMPropertyUserDefault *sharedInstance = nil;
     dispatch_once(&pred, ^{ sharedInstance = [[self alloc] init]; });
@@ -125,9 +125,8 @@ static void objectSetter(BMPropertyUserDefault *self, SEL _cmd, id object) {
 - (instancetype)init {
     self = [super init];
     if (self) {
-        SEL setupDefaultSEL = NSSelectorFromString([NSString stringWithFormat:@"%@pDefaults", @"setu"]);
-        if ([self respondsToSelector:setupDefaultSEL]) {
-            NSDictionary *defaults = [self performSelector:setupDefaultSEL];
+        if ([self respondsToSelector:@selector(setupDefaults)]) {
+            NSDictionary *defaults = [self performSelector:@selector(setupDefaults)];
             NSMutableDictionary *mutableDefaults = [NSMutableDictionary dictionaryWithCapacity:[defaults count]];
             for (NSString *key in defaults) {
                 id value = [defaults objectForKey:key];
@@ -149,19 +148,6 @@ static void objectSetter(BMPropertyUserDefault *self, SEL _cmd, id object) {
     }
     
     return key;
-}
-
-- (NSString *)_suiteName {
-    // Backwards compatibility (v 1.0.0)
-    if ([self respondsToSelector:@selector(suitName)]) {
-        return [self performSelector:@selector(suitName)];
-    }
-    
-    if ([self respondsToSelector:@selector(suiteName)]) {
-        return [self performSelector:@selector(suiteName)];
-    }
-    
-    return nil;
 }
 
 #pragma GCC diagnostic pop
