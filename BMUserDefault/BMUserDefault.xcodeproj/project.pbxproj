@@ -19,6 +19,8 @@
 		F70FA1071E7693B700599EB5 /* BMTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F70FA1061E7693B700599EB5 /* BMTimer.m */; };
 		F7B0CDD71E769F5A000D4191 /* BMUserDefault+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B0CDD61E769F5A000D4191 /* BMUserDefault+Test.m */; };
 		F7B0CDDC1E76D868000D4191 /* BMUserDefault.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F7B0CDDB1E76D868000D4191 /* BMUserDefault.podspec */; };
+		F7DDEE511E77CCF200DFCFBB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE501E77CCF200DFCFBB /* README.md */; };
+		F7DDEE541E77CD4100DFCFBB /* BMPropertyUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		F7B0CDD51E769F5A000D4191 /* BMUserDefault+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BMUserDefault+Test.h"; sourceTree = "<group>"; };
 		F7B0CDD61E769F5A000D4191 /* BMUserDefault+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BMUserDefault+Test.m"; sourceTree = "<group>"; };
 		F7B0CDDB1E76D868000D4191 /* BMUserDefault.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BMUserDefault.podspec; path = ../BMUserDefault.podspec; sourceTree = "<group>"; };
+		F7DDEE501E77CCF200DFCFBB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F7DDEE521E77CD4100DFCFBB /* BMPropertyUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPropertyUserDefault.h; sourceTree = "<group>"; };
+		F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPropertyUserDefault.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F7B0CDDB1E76D868000D4191 /* BMUserDefault.podspec */,
+				F7DDEE501E77CCF200DFCFBB /* README.md */,
 				F70FA0D81E767BB200599EB5 /* BMUserDefault */,
 				F70FA0F21E767BB200599EB5 /* BMUserDefaultTests */,
 				F70FA0D71E767BB200599EB5 /* Products */,
@@ -157,6 +163,8 @@
 				F70FA1031E767C5000599EB5 /* BMUserDefault.m */,
 				F70FA1051E7693B700599EB5 /* BMTimer.h */,
 				F70FA1061E7693B700599EB5 /* BMTimer.m */,
+				F7DDEE521E77CD4100DFCFBB /* BMPropertyUserDefault.h */,
+				F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */,
 			);
 			path = BMUserDefault;
 			sourceTree = "<group>";
@@ -318,6 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DDEE511E77CCF200DFCFBB /* README.md in Sources */,
+				F7DDEE541E77CD4100DFCFBB /* BMPropertyUserDefault.m in Sources */,
 				F70FA0E11E767BB200599EB5 /* ViewController.m in Sources */,
 				F70FA0DE1E767BB200599EB5 /* AppDelegate.m in Sources */,
 				F70FA0DB1E767BB200599EB5 /* main.m in Sources */,
