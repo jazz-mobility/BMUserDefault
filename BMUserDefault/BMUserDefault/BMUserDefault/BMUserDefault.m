@@ -164,7 +164,10 @@ const NSTimeInterval kStoreInterval = 30;
 - (void)registerDefaults:(NSDictionary<NSString *, id> * _Nonnull)registrationDictionary
 {
     [registrationDictionary enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        self.userDefault[key] = obj;
+        if (![self.userDefault.allKeys containsObject:key]) {
+            //no exists
+            self.userDefault[key] = obj;
+        }
     }];
 }
 
