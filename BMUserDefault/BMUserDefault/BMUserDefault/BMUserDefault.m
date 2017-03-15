@@ -188,8 +188,13 @@ const NSTimeInterval kStoreInterval = 30;
     if (self.isChanged) {
         __block BOOL result = NO;
         dispatch_sync(_queue, ^{
+            //retry
             NSDictionary *dict = [NSDictionary dictionaryWithDictionary:self.userDefault];
-            result = [dict writeToFile:self.storePath atomically:YES];
+            NSInteger retryTime = 2;
+            while (!result && retryTime > 0) {
+                result = [dict writeToFile:self.storePath atomically:YES];
+                retryTime--;
+            }
             NSAssert(result, @"sync to local storage fail");
         });
         return NO;
