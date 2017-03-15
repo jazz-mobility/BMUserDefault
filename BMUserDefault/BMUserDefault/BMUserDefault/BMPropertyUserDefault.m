@@ -110,14 +110,6 @@ static void objectSetter(BMPropertyUserDefault *self, SEL _cmd, id object) {
     }
 }
 
-#pragma mark - Begin
-+ (instancetype)standardUserDefault {
-    static dispatch_once_t pred;
-    static BMPropertyUserDefault *sharedInstance = nil;
-    dispatch_once(&pred, ^{ sharedInstance = [[self alloc] init]; });
-    return sharedInstance;
-}
-
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundeclared-selector"
 #pragma GCC diagnostic ignored "-Warc-performSelector-leaks"

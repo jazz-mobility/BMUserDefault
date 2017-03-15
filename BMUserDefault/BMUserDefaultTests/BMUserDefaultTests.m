@@ -113,7 +113,7 @@
     //存储
     [userDefault synchronize];
 
-    XCTAssertTrue([userDefault isChanged], @"数据错误");
+    XCTAssertTrue([userDefault isChanged], @"data error");
     
     //验证
     BMUserDefault *userDefault2 = [BMUserDefault userDefaultWithPath:path];
@@ -126,14 +126,14 @@
     NSDictionary *dictValue2 = [userDefault2 dictionaryForKey:@"dict"];
     NSData *dataValue2 = [userDefault2 dataForKey:@"data"];
     
-    XCTAssertEqualObjects(stringValue, stringValue2, @"数据错误");
-    XCTAssertEqual(boolValue, boolValue2, @"数据错误");
-    XCTAssertEqual(intValue, intValue2, @"数据错误");
-    XCTAssertEqual(doubleValue, doubleValue2, @"数据错误");
-    XCTAssertEqualObjects(urlValue, urlValue2, @"数据错误");
-    XCTAssertEqualObjects(arrayValue, arrayValue2, @"数据错误");
-    XCTAssertEqualObjects(dictValue, dictValue2, @"数据错误");
-    XCTAssertEqualObjects(dataValue, dataValue2, @"数据错误");
+    XCTAssertEqualObjects(stringValue, stringValue2, @"data error");
+    XCTAssertEqual(boolValue, boolValue2, @"data error");
+    XCTAssertEqual(intValue, intValue2, @"data error");
+    XCTAssertEqual(doubleValue, doubleValue2, @"data error");
+    XCTAssertEqualObjects(urlValue, urlValue2, @"data error");
+    XCTAssertEqualObjects(arrayValue, arrayValue2, @"data error");
+    XCTAssertEqualObjects(dictValue, dictValue2, @"data error");
+    XCTAssertEqualObjects(dataValue, dataValue2, @"data error");
 }
 
 - (void)testPerformanceExample {

@@ -10,8 +10,6 @@
 
 @interface BMPropertyUserDefault : NSObject
 
-+ (instancetype _Nonnull)standardUserDefault;
-
 /** You must init userDefault before use */
 @property (strong, nonatomic) BMUserDefault * _Nonnull userDefaults;
 
