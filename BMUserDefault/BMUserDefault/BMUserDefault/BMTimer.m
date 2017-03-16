@@ -41,13 +41,18 @@
 }
 
 - (void)fire
-{    
-    dispatch_resume(self.timer);
+{
+    if (!_active) {
+        _active = YES;
+        dispatch_resume(self.timer);
+    }
 }
 
 - (void)invalidate
 {
-    dispatch_source_cancel(self.timer);
+    if (_active) {
+        dispatch_source_cancel(self.timer);
+    }    
 }
 
 @end

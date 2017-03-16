@@ -14,10 +14,13 @@ typedef void (^_Nonnull BMTimerBlock)();
 
 - (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval repeat:(BOOL)repeat Block:(BMTimerBlock)block;
 
-
+/** start timer */
 - (void)fire;
 
-/** 关闭timer，关闭之后不能重新使用 */
+/** close timer, cannot be used after invalidate */
 - (void)invalidate;
+
+/** is fired and not invalidate */
+@property (nonatomic, assign, readonly, getter=isActive) BOOL active;
 
 @end
