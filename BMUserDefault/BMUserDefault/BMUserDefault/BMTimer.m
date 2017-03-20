@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, copy) BMTimerBlock block;
+@property (nonatomic, assign) BOOL firstTime;
 
 @end
 
@@ -22,6 +23,7 @@
 - (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval repeat:(BOOL)repeat Block:(BMTimerBlock)block
 {
     if (self = [super init]) {
+        _firstTime = YES;
         self.block = block;
         dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
@@ -29,12 +31,18 @@
         __weak typeof(self) weakSelf = self;
         dispatch_source_set_event_handler(self.timer, ^{
             __strong typeof(self) strongSelf = weakSelf;
-            strongSelf.block();
-            if (!repeat) {
-                //默认是repeat的，不想重复再这里cancel
-                [strongSelf invalidate];
+            
+            if (strongSelf.firstTime) {
+                // ignore first time
+                strongSelf.firstTime = NO;
+                return;
             }
             
+            strongSelf.block();
+            if (!repeat) {
+                // do not repeat
+                [strongSelf invalidate];
+            }
         });
     }
     return self;

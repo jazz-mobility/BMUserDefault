@@ -32,23 +32,18 @@
         NSLog(@"aaaaaa");
     }];
     
+    NSLog(@"start");
     [timer fire];
     [timer fire];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [timer invalidate];
         [timer invalidate];
-        [timer fire];        
+        [timer fire];
+        
     });
     
     [self waitForExpectationsWithTimeout:10 handler:nil];
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 @end
