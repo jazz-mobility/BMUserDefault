@@ -153,6 +153,9 @@ static void objectSetter(BMPropertyUserDefault *self, SEL _cmd, id object) {
     for (int i = 0; i < count; ++i) {
         objc_property_t property = properties[i];
         const char *name = property_getName(property);
+        
+        if (strcmp(name, "superclass") == 0) continue;
+        
         const char *attributes = property_getAttributes(property);
         
         char *getter = strstr(attributes, ",G");
