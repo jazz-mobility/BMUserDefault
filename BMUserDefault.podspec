@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
    s.name         = "BMUserDefault"
-   s.version      = "1.0.9"
+   s.version      = "1.0.10"
    s.summary      = "custom UserDefault like NSUserDefault, specific store path, thread safe auto store"
    s.homepage     = "https://github.com/zhengbomo/BMUserDefault"
    s.license      = { :type => "MIT", :file => "LICENSE" }

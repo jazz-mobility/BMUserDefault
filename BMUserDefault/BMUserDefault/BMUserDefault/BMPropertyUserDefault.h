@@ -11,6 +11,6 @@
 @interface BMPropertyUserDefault : NSObject
 
 /** You must init userDefault before use */
-@property (strong, nonatomic) BMUserDefault * _Nonnull userDefaults;
+@property (strong, nonatomic) BMUserDefault * _Nullable userDefaults;
 
 @end
