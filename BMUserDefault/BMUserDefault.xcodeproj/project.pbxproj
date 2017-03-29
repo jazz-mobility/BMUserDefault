@@ -20,6 +20,8 @@
 		F7296BA31E7A9A8900A82476 /* BMTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7296BA21E7A9A8900A82476 /* BMTimerTests.m */; };
 		F7B0CDD71E769F5A000D4191 /* BMUserDefault+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B0CDD61E769F5A000D4191 /* BMUserDefault+Test.m */; };
 		F7B0CDDC1E76D868000D4191 /* BMUserDefault.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F7B0CDDB1E76D868000D4191 /* BMUserDefault.podspec */; };
+		F7BFEAB31E8BB40700513505 /* NSArray+NullReplacement.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BFEAB21E8BB40700513505 /* NSArray+NullReplacement.m */; };
+		F7BFEAB61E8BB43700513505 /* NSDictionary+NullReplacement.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BFEAB51E8BB43700513505 /* NSDictionary+NullReplacement.m */; };
 		F7DDEE511E77CCF200DFCFBB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE501E77CCF200DFCFBB /* README.md */; };
 		F7DDEE541E77CD4100DFCFBB /* BMPropertyUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */; };
 		F7DDEE571E77CFE400DFCFBB /* UserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DDEE561E77CFE400DFCFBB /* UserInfoService.m */; };
@@ -60,6 +62,10 @@
 		F7B0CDD51E769F5A000D4191 /* BMUserDefault+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BMUserDefault+Test.h"; sourceTree = "<group>"; };
 		F7B0CDD61E769F5A000D4191 /* BMUserDefault+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BMUserDefault+Test.m"; sourceTree = "<group>"; };
 		F7B0CDDB1E76D868000D4191 /* BMUserDefault.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BMUserDefault.podspec; path = ../BMUserDefault.podspec; sourceTree = "<group>"; };
+		F7BFEAB11E8BB40700513505 /* NSArray+NullReplacement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NullReplacement.h"; sourceTree = "<group>"; };
+		F7BFEAB21E8BB40700513505 /* NSArray+NullReplacement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NullReplacement.m"; sourceTree = "<group>"; };
+		F7BFEAB41E8BB43700513505 /* NSDictionary+NullReplacement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NullReplacement.h"; sourceTree = "<group>"; };
+		F7BFEAB51E8BB43700513505 /* NSDictionary+NullReplacement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NullReplacement.m"; sourceTree = "<group>"; };
 		F7DDEE501E77CCF200DFCFBB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F7DDEE521E77CD4100DFCFBB /* BMPropertyUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPropertyUserDefault.h; sourceTree = "<group>"; };
 		F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPropertyUserDefault.m; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		F70FA0FE1E767BCD00599EB5 /* BMUserDefault */ = {
 			isa = PBXGroup;
 			children = (
+				F7BFEAB01E8BB3EF00513505 /* Category */,
 				F70FA1021E767C5000599EB5 /* BMUserDefault.h */,
 				F70FA1031E767C5000599EB5 /* BMUserDefault.m */,
 				F70FA1051E7693B700599EB5 /* BMTimer.h */,
@@ -175,6 +182,17 @@
 				F7DDEE531E77CD4100DFCFBB /* BMPropertyUserDefault.m */,
 			);
 			path = BMUserDefault;
+			sourceTree = "<group>";
+		};
+		F7BFEAB01E8BB3EF00513505 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F7BFEAB11E8BB40700513505 /* NSArray+NullReplacement.h */,
+				F7BFEAB21E8BB40700513505 /* NSArray+NullReplacement.m */,
+				F7BFEAB41E8BB43700513505 /* NSDictionary+NullReplacement.h */,
+				F7BFEAB51E8BB43700513505 /* NSDictionary+NullReplacement.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,11 +354,13 @@
 			files = (
 				F7DDEE511E77CCF200DFCFBB /* README.md in Sources */,
 				F7DDEE541E77CD4100DFCFBB /* BMPropertyUserDefault.m in Sources */,
+				F7BFEAB31E8BB40700513505 /* NSArray+NullReplacement.m in Sources */,
 				F70FA0E11E767BB200599EB5 /* ViewController.m in Sources */,
 				F70FA0DE1E767BB200599EB5 /* AppDelegate.m in Sources */,
 				F70FA0DB1E767BB200599EB5 /* main.m in Sources */,
 				F70FA1071E7693B700599EB5 /* BMTimer.m in Sources */,
 				F70FA1041E767C5000599EB5 /* BMUserDefault.m in Sources */,
+				F7BFEAB61E8BB43700513505 /* NSDictionary+NullReplacement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

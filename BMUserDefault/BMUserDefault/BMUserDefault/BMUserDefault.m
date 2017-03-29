@@ -7,6 +7,7 @@
 //
 
 #import "BMUserDefault.h"
+#import "NSDictionary+NullReplacement.h"
 #import "BMTimer.h"
 #import <UIKit/UIKit.h>
 
@@ -189,7 +190,7 @@ const NSTimeInterval kStoreInterval = 30;
         __block BOOL result = NO;
         dispatch_sync(_queue, ^{
             //retry
-            NSDictionary *dict = [NSDictionary dictionaryWithDictionary:self.userDefault];
+            NSDictionary *dict = [self.userDefault dictionaryByReplacingNullsWithBlanks];
             NSInteger retryTime = 2;
             while (!result && retryTime > 0) {
                 result = [dict writeToFile:self.storePath atomically:YES];
@@ -232,5 +233,18 @@ const NSTimeInterval kStoreInterval = 30;
     });
     return userDefaults;
 }
+
+
++ (BOOL)synchronizeAll
+{
+    NSEnumerator<BMUserDefault *> *enumerator = [BMUserDefault cacheUserDefaults].objectEnumerator;
+    BMUserDefault *defaults = enumerator.nextObject;
+    BOOL result = YES;
+    while (defaults != nil) {
+        result = result && [defaults synchronize];
+    }
+    return result;
+}
+
 
 @end

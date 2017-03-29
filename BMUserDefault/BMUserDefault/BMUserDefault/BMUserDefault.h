@@ -89,4 +89,7 @@
 
 - (BOOL)synchronize;
 
+/** sync all default file (may call when app crash) */
++ (BOOL)synchronizeAll;
+
 @end
