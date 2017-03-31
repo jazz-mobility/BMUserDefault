@@ -29,8 +29,8 @@
 
 @implementation BMUserDefault
 
-/** check store every 30 seconds */
-const NSTimeInterval kStoreInterval = 30;
+/** check store every 0.1 seconds */
+const NSTimeInterval kStoreInterval = 0.1;
 
 + (instancetype _Nonnull)userDefaultWithPath:(NSString * _Nonnull)path
 {
