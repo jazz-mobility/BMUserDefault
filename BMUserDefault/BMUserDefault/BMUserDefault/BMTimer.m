@@ -20,19 +20,32 @@
 
 @implementation BMTimer
 
+
 - (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval repeat:(BOOL)repeat Block:(BMTimerBlock)block
+{
+    return [self initWithInterval:interval immediately:NO onMainQueue:NO repeat:repeat Block:block];
+}
+
+
+- (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval onMainQueue:(BOOL)onMainQueue repeat:(BOOL)repeat Block:(BMTimerBlock)block
+{
+    return [self initWithInterval:interval immediately:NO onMainQueue:onMainQueue repeat:repeat Block:block];
+}
+
+- (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval immediately:(BOOL)immediately onMainQueue:(BOOL)onMainQueue repeat:(BOOL)repeat Block:(BMTimerBlock)block
 {
     if (self = [super init]) {
         _firstTime = YES;
         self.block = block;
-        dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        dispatch_queue_t queue = onMainQueue ? dispatch_get_main_queue() : dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
         dispatch_source_set_timer(self.timer, DISPATCH_TIME_NOW, NSEC_PER_SEC * interval, 0.1 * NSEC_PER_SEC);
         __weak typeof(self) weakSelf = self;
         dispatch_source_set_event_handler(self.timer, ^{
             __strong typeof(self) strongSelf = weakSelf;
             
-            if (strongSelf.firstTime) {
+            if (!immediately && strongSelf.firstTime) {
                 // ignore first time
                 strongSelf.firstTime = NO;
                 return;

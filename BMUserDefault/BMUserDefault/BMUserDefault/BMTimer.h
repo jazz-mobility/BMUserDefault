@@ -14,6 +14,10 @@ typedef void (^_Nonnull BMTimerBlock)();
 
 - (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval repeat:(BOOL)repeat Block:(BMTimerBlock)block;
 
+- (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval onMainQueue:(BOOL)onMainQueue repeat:(BOOL)repeat Block:(BMTimerBlock)block;
+
+- (instancetype _Nonnull)initWithInterval:(NSTimeInterval)interval immediately:(BOOL)immediately onMainQueue:(BOOL)onMainQueue repeat:(BOOL)repeat Block:(BMTimerBlock)block;
+
 /** start timer */
 - (void)fire;
 
